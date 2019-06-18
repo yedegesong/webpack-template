@@ -1,13 +1,14 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const moment = require('moment')
+
 moment.locale('zh-cn')
 const time = (moment().format('YYYY-MM-DD HH:mm:ss'))
-const BaseConfig = require('./webpack.base.config');
+const BaseConfig = require('./webpack.base.config')
+
 const CONFIG = merge(BaseConfig, {
   mode: 'production',
   module: {
@@ -16,13 +17,13 @@ const CONFIG = merge(BaseConfig, {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader"
-        ]
-      }
-    ]
+          'css-loader',
+        ],
+      },
+    ],
   },
   plugins: [
-    new ManifestPlugin(),// 输出webpack模块的映射文件到对应json
+    new ManifestPlugin(), // 输出webpack模块的映射文件到对应json
     new webpack.ProgressPlugin(), // 编译过程插件
     // 提取js内的动态css到单独的外围css文件
     new MiniCssExtractPlugin({
@@ -31,14 +32,10 @@ const CONFIG = merge(BaseConfig, {
       filename: 'static/css/[name].[contenthash:8].css',
       chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
     }),
-    new OptimizeCssAssetsPlugin(),// 压缩css
+    new OptimizeCssAssetsPlugin(), // 压缩css
     new webpack.BannerPlugin({
-      banner: `构建日期:${time}`
+      banner: `构建日期:${time}`,
     }),
-    new webpack.DllReferencePlugin({
-      // 描述 react 动态链接库的文件内容
-      manifest: require('../site/vendor-manifest.json'),
-    })
-  ]
+  ],
 })
 module.exports = CONFIG

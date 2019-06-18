@@ -2,7 +2,12 @@ const webpack = require('webpack')
 const webpackConfig = require('../config/webpack.build.config')
 
 const compiler = webpack(webpackConfig)
-compiler.run((err, stats) => {
+compiler.watch({
+  // watchOptions 示例
+  aggregateTimeout: 300,
+  poll: undefined,
+}, (err, stats) => {
+  // 在这里打印 watch/build 结果...
   if (err) {
     console.error(err.stack || err)
     if (err.details) {

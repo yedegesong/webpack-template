@@ -8,7 +8,9 @@
     "build": "npx webpack --mode production",
     "dll": "npx webpack --config config/webpack.dll.config.js",
     "builds": "node script/build.js",
-    "start": "node script/start.js"
+    "watch": "node script/watch.js",
+    "start": "node script/start.js",
+    "anywhere": "npx anywhere -d ./dist -p 8989"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "anywhere": "^1.5.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-import": "^1.11.0",

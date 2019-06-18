@@ -1,7 +1,9 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "node": true,
+        "commonjs": true,
     },
     "extends": "airbnb",
     "parser": "babel-eslint",
@@ -12,6 +14,7 @@ module.exports = {
         "react/jsx-filename-extension": 0,// 关闭JSX已.js 扩展的命名验证
         "react/react-in-jsx-scope": 0, // 关闭js中，引入jsx验证
         "react/prop-types": 0, // 关闭节点属性类型检测
+        "import/no-extraneous-dependencies": 0,// 关闭require引入警告
         "import/prefer-default-export": 0,
         "max-len": 0,
         "arrow-body-style": 0,
