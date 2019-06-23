@@ -12,6 +12,7 @@ const BaseConfig = {
     path: path.resolve('dist'), // 配置输出的地址
     filename: '[name]-[hash].js', // [name] 对象的键 - [hash] 哈希值
     chunkFilename: '[name]-[hash].js', // 异步分块加载文件名表示，如按需加载的模块名定义
+    publicPath: '/',
   },
   module: {
     rules: [

@@ -1,9 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Home from './home'
+import Root from './routers'
 
+const App = () => {
+  return (
+    <React.Suspense fallback={<div>Loading...</div>}>
+      <Root />
+    </React.Suspense>
+  )
+}
 
 ReactDOM.render(
-  <Home />,
+  <App />,
   document.getElementById('root'),
 )

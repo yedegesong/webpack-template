@@ -17,6 +17,7 @@ const CONFIG = Merge(BaseConfig, {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({ serverUrl: JSON.stringify('http://www.baiodu.com') }),
   ],
 })

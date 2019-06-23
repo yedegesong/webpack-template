@@ -9,6 +9,7 @@ module.exports = {
     "parser": "babel-eslint",
     "rules": {
         "no-console": "off", // 开启console
+        "import/no-unresolved": 0,
         "semi": ["error", "never"],// 配置不开启分号;
         "react/prefer-stateless-function": 0,// 关闭react 无状态不能使用继承
         "react/jsx-filename-extension": 0,// 关闭JSX已.js 扩展的命名验证

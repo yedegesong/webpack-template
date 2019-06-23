@@ -8,6 +8,9 @@ const devServerOptions = Object.assign({}, webpackConfig.devServer, {
     colors: true,
   },
   contentBase: './dist', // 设置根目录
+  hot: true, // 热加载
+  hotOnly: true,
+  historyApiFallback: true, // html5路由404重置
   // open: true, // 打开浏览器
   port: 8089, // 设置请求的端口
   proxy: {}, // 一些代理的配置
