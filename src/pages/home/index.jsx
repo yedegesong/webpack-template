@@ -1,7 +1,8 @@
 import React from 'react'
 
-function Home() {
-  return <h2>Home</h2>
+function Home(props) {
+  console.log(props)
+  return <h2>我模仿豆瓣建设</h2>
 }
 
 export default Home

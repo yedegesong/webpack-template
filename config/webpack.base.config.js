@@ -33,11 +33,15 @@ const BaseConfig = {
     alias:
     {
       '@utils': path.resolve(__dirname, 'src/utils/'),
+      src: path.resolve(__dirname, 'src'),
     },
     // 尝试按顺序解决这些扩展
     extensions: ['.js', '.jsx', '.json'],
     // webpack 解决模块时，应该解析哪些目录
-    modules: ['node_modules'],
+    modules: [
+      'src',
+      'node_modules',
+    ],
   },
   optimization: {
     splitChunks: {
