@@ -1,5 +1,6 @@
+process.env.NODE_ENV = 'production' // 设置环境变量;
 const webpack = require('webpack')
-const webpackConfig = require('../config/webpack.build.config')
+const webpackConfig = require('../webpack/webpack.build.config')
 
 const compiler = webpack(webpackConfig)
 compiler.run((err, stats) => {

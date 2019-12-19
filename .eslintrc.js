@@ -8,6 +8,7 @@ module.exports = {
     "extends": "airbnb",
     "parser": "babel-eslint",
     "rules": {
+        "global-require":0,
         "no-console": "off", // 开启console
         "import/no-unresolved": 0,
         "semi": ["error", "never"],// 配置不开启分号;

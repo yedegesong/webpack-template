@@ -9,6 +9,10 @@ moment.locale('zh-cn')
 const time = (moment().format('YYYY-MM-DD HH:mm:ss'))
 const BaseConfig = require('./webpack.base.config')
 
+const env = process.env.NODE_ENV === 'test'
+  ? require('../config/test.env')
+  : require('../config/prod.env')
+
 const CONFIG = merge(BaseConfig, {
   mode: 'production',
   module: {
@@ -23,6 +27,9 @@ const CONFIG = merge(BaseConfig, {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': env,
+    }),
     new ManifestPlugin(), // 输出webpack模块的映射文件到对应json
     new webpack.ProgressPlugin(), // 编译过程插件
     // 提取js内的动态css到单独的外围css文件

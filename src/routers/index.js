@@ -18,7 +18,8 @@ const App = () => {
               path={route.path}
               exact={route.exact}
               render={(routerProps) => {
-                return <route.component {...routerProps} />
+                const Component = React.lazy(route.component)
+                return <Component {...routerProps} />
               }}
             />
           )
