@@ -2,30 +2,33 @@ import React from 'react'
 import {
   BrowserRouter as Router,
   Switch,
-  Redirect,
   Route,
 } from 'react-router-dom'
 import RoutersConfig from 'router-config'
+import Layouts from 'layouts'
 
-const App = () => {
+const App = (props) => {
   return (
     <Router>
-      <Switch>
-        {RoutersConfig.map((route, routerIndex) => {
-          return (
-            <Route
-              key={routerIndex}
-              path={route.path}
-              exact={route.exact}
-              render={(routerProps) => {
-                const Component = React.lazy(route.component)
-                return <Component {...routerProps} />
-              }}
-            />
-          )
-        })}
-        <Redirect to={{ pathname: '/home' }} />
-      </Switch>
+      <Layouts {...props}>
+        <Switch>
+          {RoutersConfig.map((route, routerIndex) => {
+            return (
+              <Route
+                key={routerIndex}
+                path={route.path}
+                exact
+                render={(routerProps) => {
+                  const Component = React.lazy(route.component)
+                  return (
+                    <Component {...route} {...routerProps} />
+                  )
+                }}
+              />
+            )
+          })}
+        </Switch>
+      </Layouts>
     </Router>
   )
 }

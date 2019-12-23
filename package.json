@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx webpack --watch --mode development",
-    "build": "npx webpack --mode production",
+    "builds": "npx webpack --mode production",
     "dll": "npx webpack --config config/webpack.dll.config.js",
-    "builds": "node script/build.js",
+    "build": "node script/build.js",
     "watch": "node script/watch.js",
     "start": "node script/start.js",
     "anywhere": "npx anywhere -d ./dist -p 8989"
@@ -33,6 +33,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.6.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "style-loader": "^0.23.1",

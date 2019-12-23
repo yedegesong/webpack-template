@@ -24,6 +24,14 @@ const CONFIG = merge(BaseConfig, {
           'css-loader',
         ],
       },
+      /* {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'less-loader',
+        ],
+      }, */
     ],
   },
   plugins: [

@@ -24,6 +24,14 @@ const BaseConfig = {
           cacheDirectory: false, // 开启babel 编译缓存
         },
       },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      },
     ],
   },
   resolve: {
@@ -32,13 +40,14 @@ const BaseConfig = {
      */
     alias:
     {
-      '@utils': path.resolve(__dirname, 'src/utils/'),
-      src: path.resolve(__dirname, 'src'),
+      sdk: path.resolve('sdk'),
+      src: path.resolve('src'),
     },
     // 尝试按顺序解决这些扩展
     extensions: ['.js', '.jsx', '.json'],
     // webpack 解决模块时，应该解析哪些目录
     modules: [
+      'sdk',
       'src',
       'node_modules',
     ],
