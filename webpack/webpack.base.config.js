@@ -44,7 +44,7 @@ const BaseConfig = {
       src: path.resolve('src'),
     },
     // 尝试按顺序解决这些扩展
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts'],
     // webpack 解决模块时，应该解析哪些目录
     modules: [
       'sdk',
