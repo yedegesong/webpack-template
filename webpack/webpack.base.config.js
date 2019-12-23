@@ -28,7 +28,7 @@ const BaseConfig = {
         test: /\.less$/,
         use: [
           'style-loader',
-          'css-loader',
+          'css-loader?modules&localIdentName=[name]__[local]-[hash:base64:5]',
           'less-loader',
         ],
       },
