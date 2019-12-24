@@ -1,6 +1,6 @@
 # webpack-template
 
-> 一个 webpack-react 项目模板
+> 一个 webpack-react 工程项目模板
 
 ## Build Setup
 
@@ -12,7 +12,7 @@ npm install
 npm run start
 
 # 构建打包
-npm run builds
+npm run build
 
 # 预览构建打包
 npm run anywhere

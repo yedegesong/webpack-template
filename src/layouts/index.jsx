@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Layout, Menu, Icon } from 'antd'
+import styles from './layout.less'
 
 const { Header, Sider, Content } = Layout
 /**
  * 主体一次性容器
  */
-export default class SiderDemo extends Component {
+export default class BaseLayout extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -25,7 +26,7 @@ export default class SiderDemo extends Component {
     const { collapsed } = this.state
     return (
       <Layout>
-        <Header style={{ background: '#fff', padding: 0 }}>
+        <Header className={styles.layoutHeader}>
           <Icon
             className="trigger"
             type={collapsed ? 'menu-unfold' : 'menu-fold'}
@@ -34,7 +35,6 @@ export default class SiderDemo extends Component {
         </Header>
         <Layout>
           <Sider trigger={null} collapsible collapsed={collapsed}>
-            <div className="logo" />
             <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
               <Menu.Item key="1">
                 <Icon type="user" />
@@ -42,7 +42,7 @@ export default class SiderDemo extends Component {
               </Menu.Item>
             </Menu>
           </Sider>
-          <Content>
+          <Content className={styles.layoutMain}>
             {children}
           </Content>
         </Layout>

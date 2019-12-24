@@ -24,6 +24,14 @@ const BaseConfig = {
           cacheDirectory: false, // 开启babel 编译缓存
         },
       },
+      /* {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader',
+        ],
+      }, */
       {
         test: /\.less$/,
         use: [
