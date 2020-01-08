@@ -5,9 +5,7 @@ import './main.css'
 
 const App = () => {
   return (
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <Root />
-    </React.Suspense>
+    <Root />
   )
 }
 

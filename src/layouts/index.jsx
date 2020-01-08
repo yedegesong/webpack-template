@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Icon } from 'antd'
+import { Layout, Icon, Spin } from 'antd'
+import { withRouter } from 'react-router-dom'
+import { transformData } from 'sdk'
+import LayoutMenu from './menu'
 import styles from './layout.less'
 
 const { Header, Sider, Content } = Layout
@@ -21,7 +24,13 @@ export default class BaseLayout extends Component {
     })
   };
 
+  onMenuItemClick = (item) => {
+    const { path } = item
+    // this.props.history.push(path)
+  }
+
   render() {
+    console.log(this.props)
     const { children } = this.props
     const { collapsed } = this.state
     return (
@@ -35,18 +44,17 @@ export default class BaseLayout extends Component {
         </Header>
         <Layout>
           <Sider trigger={null} collapsible collapsed={collapsed}>
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-              <Menu.Item key="1">
-                <Icon type="user" />
-                <span>nav 1</span>
-              </Menu.Item>
-            </Menu>
+            <LayoutMenu {...this.props} onMenuItemClick={this.onMenuItemClick} />
           </Sider>
           <Content className={styles.layoutMain}>
-            {children}
+            <React.Suspense fallback={<div><Spin size="large" /></div>}>
+              {children}
+            </React.Suspense>
           </Content>
         </Layout>
       </Layout>
     )
   }
 }
+
+// export default withRouter(BaseLayout)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table } from 'antd'
 
-import './home.less'
+import styles from './home.less'
 
 function Home() {
   const dataListNum = 20
@@ -35,7 +35,7 @@ function Home() {
       key: 'address',
     },
   ]
-  return <Table dataSource={dataSource} columns={columns} />
+  return <Table dataSource={dataSource} columns={columns} className={styles.homeContent} />
 }
 
 export default Home

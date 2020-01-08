@@ -6,11 +6,12 @@ import {
 } from 'react-router-dom'
 import RoutersConfig from 'router-config'
 import Layouts from 'layouts'
+import NavConfing from 'nav-config'
 
 const App = (props) => {
   return (
     <Router>
-      <Layouts {...props}>
+      <Layouts menuData={NavConfing} {...props}>
         <Switch>
           {RoutersConfig.map((route, routerIndex) => {
             return (

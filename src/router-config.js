@@ -1,10 +1,15 @@
 
-import { loader } from 'sdk'
+// import { loader } from 'sdk'
 
 const routersConfig = [
   {
     path: '/home',
-    component: loader('home'),
+    // component: loader('home'),
+    component: () => import('pages/home'),
+  },
+  {
+    path: '/user',
+    component: () => import('pages/user'),
   },
 ]
 

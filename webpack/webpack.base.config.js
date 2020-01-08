@@ -1,7 +1,7 @@
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin') // 模板插件
-const CleanWebpackPlugin = require('clean-webpack-plugin') // 清除插件
+
 
 const BaseConfig = {
   entry: {
@@ -80,7 +80,6 @@ const BaseConfig = {
     },
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ // Also generate a test.html
       title: 'Custom template', // 参数
       filename: 'index.html', // 输出的文件名

@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin') // 清除插件
 const ManifestPlugin = require('webpack-manifest-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const moment = require('moment')
@@ -35,6 +36,7 @@ const CONFIG = merge(BaseConfig, {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env': env,
     }),
