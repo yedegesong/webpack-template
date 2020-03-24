@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin') // 模板插件
 
 const BaseConfig = {
   entry: {
-    app: './src/main.js', //  主入口
+    app: './src/main', //  主入口
     vendor: ['react', 'react-dom'],
   },
   output: {
@@ -17,21 +17,13 @@ const BaseConfig = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // 匹配规则
+        test: /\.(js|jsx|ts|tsx)$/, // 匹配规则
         exclude: /node_modules/, // 排除不解析
         loader: 'babel-loader', // 使用的加载器
         options: {
           cacheDirectory: false, // 开启babel 编译缓存
         },
       },
-      /* {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'less-loader',
-        ],
-      }, */
       {
         test: /\.less$/,
         use: [
@@ -52,7 +44,7 @@ const BaseConfig = {
       src: path.resolve('src'),
     },
     // 尝试按顺序解决这些扩展
-    extensions: ['.js', '.jsx', '.json', '.ts'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     // webpack 解决模块时，应该解析哪些目录
     modules: [
       'sdk',

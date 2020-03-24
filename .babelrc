@@ -1,11 +1,11 @@
 {
-  "presets": ["@babel/preset-env","@babel/preset-react"],
+  "presets": ["@babel/preset-env","@babel/preset-react","@babel/preset-typescript"],
   "plugins": [
       // antd 按需加载插件
       ["babel-plugin-import",{
         "libraryName": "antd",
         "libraryDirectory": "es",
-        "style": "css",
+        "style": "css"
       }],
       [ "@babel/plugin-proposal-decorators", { "legacy" : true }], // 装饰器插件
       [ "@babel/plugin-proposal-class-properties", { "loose": true }], //类的静态属性

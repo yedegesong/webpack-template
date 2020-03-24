@@ -3,6 +3,7 @@ const WebpackDevServer = require('webpack-dev-server')
 const webpackConfig = require('../webpack/webpack.dev.config')
 
 const compiler = Webpack(webpackConfig)
+
 const devServerOptions = Object.assign({}, webpackConfig.devServer, {
   stats: {
     colors: true,
