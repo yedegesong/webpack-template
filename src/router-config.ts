@@ -1,14 +1,13 @@
 
 // import { loader } from 'sdk'
-
-const routersConfig = [
+interface routersConfig {
+  path: string;
+  component: () => Promise<React.ReactNode>;
+}
+const routersConfig:Array<routersConfig> = [
   // {
   //   path: '/home',
   //   component: () => import('pages/home'),
-  // },
-  // {
-  //   path: '/user',
-  //   component: () => import('pages/user'),
   // },
 ]
 
