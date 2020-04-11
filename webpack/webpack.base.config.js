@@ -35,20 +35,12 @@ const BaseConfig = {
     ],
   },
   resolve: {
-    /**
-     * 设置别名解决相对长路径问题
-     */
-    alias:
-    {
-      sdk: path.resolve('sdk'),
-      src: path.resolve('src'),
-    },
     // 尝试按顺序解决这些扩展
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     // webpack 解决模块时，应该解析哪些目录
     modules: [
-      'sdk',
-      'src',
+      path.resolve('src'),
+      path.resolve('sdk'),
       'node_modules',
     ],
   },
