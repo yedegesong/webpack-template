@@ -20,6 +20,7 @@ const App = (props) => {
                 path={route.path}
                 exact
                 render={(routerProps) => {
+                  console.log(routerProps)
                   const Component = React.lazy(route.component)
                   return (
                     <Component {...route} {...routerProps} />
