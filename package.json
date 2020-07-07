@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npx webpack --watch --mode development",
     "builds": "npx webpack --mode production",
-    "dll": "npx webpack --config config/webpack.dll.config.js",
+    "dll": "npx webpack --config webpack/webpack.dll.config.js",
     "build": "node script/build.js",
     "watch": "node script/watch.js",
     "start": "node script/start.js",
